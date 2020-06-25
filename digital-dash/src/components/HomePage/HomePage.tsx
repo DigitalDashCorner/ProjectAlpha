@@ -7,15 +7,22 @@ import {
   Tabs,
   Tab,
   Button,
+  BottomNavigation 
 } from "@material-ui/core";
-import { TabPanel } from "@material-ui/lab";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithubAlt,
+  faGoogle,
+  faFacebook,
+  faTwitter,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+
 import React, { ReactElement } from "react";
 // import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Image, DotGroup } from 'pure-react-carousel';
 
 import featuredA from "../../assets/svg/BuildBetterProducts_ArtWork.svg";
-import featuredB from "../../assets/picB.jpg";
-import featuredC from "../../assets/picC.jpg";
-import featuredD from "../../assets/picD.jpg";
 
 import icon from "../../assets/svg/Icon-arrow-down.svg";
 import externalIcon from "../../assets/svg/Icon-external-link.svg";
@@ -23,6 +30,8 @@ import WhoWeAre from "../../assets/svg/WhoWeAre_ArtWork.svg";
 import WhatWeDo from "../../assets/svg/WhatWeDo_ArtWork.svg";
 import ProjectR from "../../assets/svg/ProjectR_Artwork.svg";
 import Careers from "../../assets/svg/Careers_ArtWork.svg";
+import Future from "../../assets/svg/Future_ArtWork.svg";
+import JobMatching from "../../assets/svg/JobMatching_ArtWork.svg";
 
 const useStyles = makeStyles((theme) => ({
   baseContainer: {
@@ -61,6 +70,11 @@ const useStyles = makeStyles((theme) => ({
     height: "20px",
     width: "20px",
   },
+  socialmediaIcons: {
+    height: "40px",
+    width: "40px",
+  },
+
   WhoWeAre: {
     marginTop: "52px",
   },
@@ -276,7 +290,11 @@ export const HomePage = (): ReactElement => {
       <Grid
         container
         direction="column"
-        style={{ marginTop: "250px", background: "#EFEFEF" }}
+        style={{
+          marginTop: "250px",
+          background: "#EFEFEF",
+          paddingBottom: "170px",
+        }}
       >
         <Grid
           container
@@ -302,11 +320,26 @@ export const HomePage = (): ReactElement => {
             <Grid item>
               <Typography
                 className={classes.Headings}
-                style={{ fontWeight: "bold", width: "720px",marginBottom:"40px" }}
+                style={{
+                  fontWeight: "bold",
+                  width: "720px",
+                  marginBottom: "40px",
+                }}
               >
                 We’re looking for people who want to make a difference.
               </Typography>
-              <Button variant="contained" className={classes.subHeadings} style={{background:"#6C63FF",color:"white",fontWeight:"bold", borderRadius:"30px", paddingLeft:"64px",paddingRight:"64px"}}>
+              <Button
+                variant="contained"
+                className={classes.subHeadings}
+                style={{
+                  background: "#6C63FF",
+                  color: "white",
+                  fontWeight: "bold",
+                  borderRadius: "30px",
+                  paddingLeft: "64px",
+                  paddingRight: "64px",
+                }}
+              >
                 View Opportunities
               </Button>
             </Grid>
@@ -316,7 +349,117 @@ export const HomePage = (): ReactElement => {
           </Grid>
         </Grid>
       </Grid>
+
+      <Grid
+        container
+        direction="column"
+        style={{ paddingBottom: "170px", paddingTop: "100px" }}
+        className={classes.BuildProducts}
+      >
+        <Grid item direction="column">
+          <Typography variant="body1" className={classes.subHeadings}>
+            Have something interesting to say!
+          </Typography>
+          <Typography
+            variant="body2"
+            className={classes.Headings}
+            style={{ paddingTop: "20px", fontWeight: "bold" }}
+          >
+            Contact Us
+          </Typography>
+        </Grid>
+
+        <Grid container item justify="center" direction="row">
+          <Grid item md={4}>
+            <Typography
+              className={classes.Headings}
+              style={{
+                marginTop: "30px",
+                width: "440px",
+                height: "110px",
+                background: "#A3A3A3",
+                borderRadius: "30px",
+              }}
+            >
+              <Grid item style={{ padding: "15px 92px 0px 92px" }}>
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  className={classes.socialmediaIcons}
+                />
+                <FontAwesomeIcon
+                  icon={faFacebook}
+                  className={classes.socialmediaIcons}
+                  style={{ paddingLeft: "52px", paddingRight: "56px" }}
+                />
+                <FontAwesomeIcon
+                  icon={faTwitter}
+                  className={classes.socialmediaIcons}
+                />
+              </Grid>
+            </Typography>
+            <Typography
+              style={{
+                fontSize: "100px",
+                fontWeight: "bold",
+                width: "347px",
+                fontFamily: "Karla",
+              }}
+            >
+              News & Blogs
+            </Typography>
+          </Grid>
+          <Grid item md={4}>
+            <img
+              src={Future}
+              style={{ marginBottom:"10px" }}
+            />
+            <Typography
+              variant="body1"
+              style={{ fontWeight: "bold", fontFamily: "Karla",  }}
+            >
+              Resume Builder: The Future of Job Hunting
+            </Typography>
+            <Grid
+              container
+              item
+              className={classes.subHeadings}
+              style={{ color: "#5F90FF" }}
+            >
+              <Grid item>
+                <Typography variant="body2">Learn More</Typography>
+              </Grid>
+              <img
+                src={externalIcon}
+                style={{ width: "27px", height: "27px", paddingLeft: "24px" }}
+              />
+            </Grid>
+          </Grid>
+          <Grid item md={4}>
+            <Typography
+              variant="body1"
+              style={{ fontWeight: "bold", fontFamily: "Karla" }}
+            >
+              Job Matching: Finding the Career that's Right for You
+            </Typography>
+            <Grid
+              container
+              item
+              className={classes.subHeadings}
+              style={{ color: "#5F90FF" }}
+            >
+              <Grid item>
+                <Typography variant="body2">Learn More</Typography>
+              </Grid>
+              <img
+                src={externalIcon}
+                style={{ width: "27px", height: "27px", paddingLeft: "24px" }}
+              />
+            </Grid>
+            <img src={JobMatching} />
+          </Grid>
+        </Grid>
+      </Grid>
+      
     </Container>
   );
 };
-    
