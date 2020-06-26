@@ -7,13 +7,15 @@ import {
   Tabs,
   Tab,
   Button,
-  BottomNavigation 
+  BottomNavigation,
+  Tooltip,
+  Fab,
+  IconButton,
 } from "@material-ui/core";
-
+import { Link, animateScroll as scroll } from "react-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithubAlt,
-  faGoogle,
   faFacebook,
   faTwitter,
   faInstagram,
@@ -32,6 +34,7 @@ import ProjectR from "../../assets/svg/ProjectR_Artwork.svg";
 import Careers from "../../assets/svg/Careers_ArtWork.svg";
 import Future from "../../assets/svg/Future_ArtWork.svg";
 import JobMatching from "../../assets/svg/JobMatching_ArtWork.svg";
+
 
 const useStyles = makeStyles((theme) => ({
   baseContainer: {
@@ -94,372 +97,388 @@ export const HomePage = (): ReactElement => {
   const handleNavChange = (event: any, tab: any) => {
     setNavTabValue(tab);
   };
+
+
+  
   return (
     <Container disableGutters className={classes.baseContainer} maxWidth="xl">
-      <Grid
-        container
-        direction="column"
-        justify="center"
-        className={classes.Home}
-        style={{ marginTop: "120px" }}
-      >
-        <Grid
-          container
-          direction="row"
-          justify="center"
-          className={classes.BuildProducts}
-        >
-          <Grid item direction="column">
-            <Typography variant="body2" className={classes.Headings}>
-              Build Better Products
-            </Typography>
-            <Typography
-              variant="body2"
-              className={classes.subHeadings}
-              style={{ width: "316px", paddingTop: "18px" }}
-            >
-              Lorem ipsum dolor sit amet, consectetur dolor sit Lorem ipsum
-            </Typography>
-            <img
-              className={classes.icons}
-              src={icon}
-              style={{ marginTop: "22px" }}
-            />
-          </Grid>
-          <Grid item>
-            <img className={classes.carouselImage} src={featuredA} />
-          </Grid>
-        </Grid>
-      </Grid>
-
-      <Grid container className={classes.Home} style={{ marginTop: "181px" }}>
+      
+      <section title="Top" id="Top">
         <Grid
           container
           direction="column"
           justify="center"
-          className={classes.BuildProducts}
+          className={classes.Home}
+          style={{ marginTop: "120px" }}
         >
-          <Grid container item direction="row">
-            <Grid item>
-              <Typography variant="body2" className={classes.Headings}>
-                Who We Are
-              </Typography>
-              <img
-                src={WhoWeAre}
-                className={classes.WhoWeAre}
-                style={{ marginRight: "52px" }}
-              />
-            </Grid>
-            <Grid item>
-              <Typography
-                variant="body2"
-                className={classes.subHeadings}
-                style={{
-                  width: "620px",
-                  marginTop: "100px",
-                  paddingTop: "18px",
-                }}
-              >
-                Lorem ipsum dolor sit amet, consectetur dolor sit Lorem ipsum
-                lorem ipsum dolor sit amet, consectetur dolor lorem ipsum dolor
-                sit amet, consectetur dolor lorem ipsum dolor sit amet,
-                consectetur dolor
-              </Typography>
-            </Grid>
-          </Grid>
-
-          <Grid container item direction="row" justify="flex-end">
-            <Grid item>
-              <Typography
-                variant="body2"
-                className={classes.subHeadings}
-                style={{
-                  width: "620px",
-                  marginTop: "100px",
-                  paddingTop: "18px",
-                }}
-              >
-                Lorem ipsum dolor sit amet, consectetur dolor sit Lorem ipsum
-                lorem ipsum dolor sit amet, consectetur dolor lorem ipsum dolor
-                sit amet, consectetur dolor lorem ipsum dolor sit amet,
-                consectetur dolor
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography
-                variant="body2"
-                className={classes.Headings}
-                style={{ marginLeft: "100px" }}
-              >
-                What We Do
-              </Typography>
-              <img
-                src={WhatWeDo}
-                className={classes.WhoWeAre}
-                style={{ marginLeft: "52px" }}
-              />
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
-      <Grid
-        container
-        direction="column"
-        justify="center"
-        className={classes.Home}
-        style={{ marginTop: "250px" }}
-      >
-        <Grid
-          container
-          direction="row"
-          justify="center"
-          className={classes.BuildProducts}
-        >
-          <Grid item direction="column">
-            <Typography variant="body2" className={classes.subHeadings}>
-              Some of our work
-            </Typography>
-            <Typography variant="body2" className={classes.Headings}>
-              Projects
-            </Typography>
-            <Tabs value={navTabValue} onChange={handleNavChange}>
-              <Tab
-                value="ResumeBuilder"
-                label="Resume Builder"
-                className={classes.projHeadings}
-              />
-              <Tab
-                value="MyRef"
-                label="MyRef"
-                className={classes.projHeadings}
-              />
-              <Tab
-                value="JobMatch"
-                label="Job Match"
-                className={classes.projHeadings}
-              />
-            </Tabs>
-            <Typography
-              variant="body2"
-              style={{
-                fontFamily: "karla",
-                fontSize: "70px",
-                paddingTop: "30px",
-              }}
-            >
-              Resume Builder
-            </Typography>
-            <Typography
-              variant="body2"
-              className={classes.subHeadings}
-              style={{
-                width: "614px",
-                paddingTop: "50px",
-                paddingBottom: "45px",
-              }}
-            >
-              Lorem ipsum dolor sit amet, consectetur dolor sit Lorem ipsum
-              lorem ipsum dolor sit amet, consectetur dolor lorem ipsum dolor
-              sit amet, consectetur dolor lorem ipsum dolor sit amet,
-              consectetur dolor
-            </Typography>
-            <Grid
-              container
-              item
-              className={classes.subHeadings}
-              style={{ color: "#5F90FF" }}
-            >
-              <Grid item>
-                <Typography variant="body2">Learn More</Typography>
-              </Grid>
-              <img
-                src={externalIcon}
-                style={{ width: "27px", height: "27px", paddingLeft: "24px" }}
-              />
-            </Grid>
-          </Grid>
-          <Grid item>
-            <img
-              src={ProjectR}
-              style={{ paddingLeft: "150px", paddingTop: "40px" }}
-            />
-          </Grid>
-        </Grid>
-      </Grid>
-
-      <Grid
-        container
-        direction="column"
-        style={{
-          marginTop: "250px",
-          background: "#EFEFEF",
-          paddingBottom: "170px",
-        }}
-      >
-        <Grid
-          container
-          direction="column"
-          justify="center"
-          className={classes.BuildProducts}
-        >
-          <Grid item direction="column">
-            <Typography
-              variant="body2"
-              className={classes.Headings}
-              style={{ paddingTop: "50px", fontWeight: "bold" }}
-            >
-              Careers
-            </Typography>
-          </Grid>
           <Grid
             container
-            item
+            direction="row"
             justify="center"
-            style={{ paddingTop: "240px", paddingLeft: "50px" }}
+            className={classes.BuildProducts}
           >
+            <Grid item direction="column">
+              <Typography variant="body2" className={classes.Headings}>
+                Build Better Products
+              </Typography>
+              <Typography
+                variant="body2"
+                className={classes.subHeadings}
+                style={{ width: "316px", paddingTop: "18px" }}
+              >
+                Lorem ipsum dolor sit amet, consectetur dolor sit Lorem ipsum
+              </Typography>
+              <Link
+                to="AboutUs"
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-70}
+              >
+                <Tooltip title="" style={{ marginTop: "22px" }}>
+                  <IconButton>
+                    <img className={classes.icons} src={icon} />
+                  </IconButton>
+                </Tooltip>
+              </Link>
+            </Grid>
             <Grid item>
+              <img className={classes.carouselImage} src={featuredA} />
+            </Grid>
+          </Grid>
+        </Grid>
+      </section>
+      <section title="AboutUs" id="AboutUs">
+        <Grid container className={classes.Home} style={{ marginTop: "181px" }}>
+          <Grid
+            container
+            direction="column"
+            justify="center"
+            className={classes.BuildProducts}
+          >
+            <Grid container item direction="row">
+              <Grid item>
+                <Typography variant="body2" className={classes.Headings}>
+                  Who We Are
+                </Typography>
+                <img
+                  src={WhoWeAre}
+                  className={classes.WhoWeAre}
+                  style={{ marginRight: "52px" }}
+                />
+              </Grid>
+              <Grid item>
+                <Typography
+                  variant="body2"
+                  className={classes.subHeadings}
+                  style={{
+                    width: "620px",
+                    marginTop: "100px",
+                    paddingTop: "18px",
+                  }}
+                >
+                  Lorem ipsum dolor sit amet, consectetur dolor sit Lorem ipsum
+                  lorem ipsum dolor sit amet, consectetur dolor lorem ipsum
+                  dolor sit amet, consectetur dolor lorem ipsum dolor sit amet,
+                  consectetur dolor
+                </Typography>
+              </Grid>
+            </Grid>
+
+            <Grid container item direction="row" justify="flex-end">
+              <Grid item>
+                <Typography
+                  variant="body2"
+                  className={classes.subHeadings}
+                  style={{
+                    width: "620px",
+                    marginTop: "100px",
+                    paddingTop: "18px",
+                  }}
+                >
+                  Lorem ipsum dolor sit amet, consectetur dolor sit Lorem ipsum
+                  lorem ipsum dolor sit amet, consectetur dolor lorem ipsum
+                  dolor sit amet, consectetur dolor lorem ipsum dolor sit amet,
+                  consectetur dolor
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography
+                  variant="body2"
+                  className={classes.Headings}
+                  style={{ marginLeft: "100px" }}
+                >
+                  What We Do
+                </Typography>
+                <img
+                  src={WhatWeDo}
+                  className={classes.WhoWeAre}
+                  style={{ marginLeft: "52px" }}
+                />
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </section>
+     
+      <section title="projects" id="projects">
+        <Grid
+          container
+          direction="column"
+          justify="center"
+          className={classes.Home}
+          style={{ marginTop: "250px" }}
+        >
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            className={classes.BuildProducts}
+          >
+            <Grid item direction="column">
+              <Typography variant="body2" className={classes.subHeadings}>
+                Some of our work
+              </Typography>
+              <Typography variant="body2" className={classes.Headings}>
+                Projects
+              </Typography>
+              <Tabs value={navTabValue} onChange={handleNavChange}>
+                <Tab
+                  value="ResumeBuilder"
+                  label="Resume Builder"
+                  className={classes.projHeadings}
+                />
+                <Tab
+                  value="MyRef"
+                  label="MyRef"
+                  className={classes.projHeadings}
+                />
+                <Tab
+                  value="JobMatch"
+                  label="Job Match"
+                  className={classes.projHeadings}
+                />
+              </Tabs>
+              <Typography
+                variant="body2"
+                style={{
+                  fontFamily: "karla",
+                  fontSize: "70px",
+                  paddingTop: "30px",
+                }}
+              >
+                Resume Builder
+              </Typography>
+              <Typography
+                variant="body2"
+                className={classes.subHeadings}
+                style={{
+                  width: "614px",
+                  paddingTop: "50px",
+                  paddingBottom: "45px",
+                }}
+              >
+                Lorem ipsum dolor sit amet, consectetur dolor sit Lorem ipsum
+                lorem ipsum dolor sit amet, consectetur dolor lorem ipsum dolor
+                sit amet, consectetur dolor lorem ipsum dolor sit amet,
+                consectetur dolor
+              </Typography>
+              <Grid
+                container
+                item
+                className={classes.subHeadings}
+                style={{ color: "#5F90FF" }}
+              >
+                <Grid item>
+                  <Typography variant="body2">Learn More</Typography>
+                </Grid>
+                <img
+                  src={externalIcon}
+                  style={{ width: "27px", height: "27px", paddingLeft: "24px" }}
+                />
+              </Grid>
+            </Grid>
+            <Grid item>
+              <img
+                src={ProjectR}
+                style={{ paddingLeft: "150px", paddingTop: "40px" }}
+              />
+            </Grid>
+          </Grid>
+        </Grid>
+      </section>
+      <section title="careers" id="careers">
+        <Grid
+          container
+          direction="column"
+          style={{
+            marginTop: "250px",
+            background: "#EFEFEF",
+            paddingBottom: "170px",
+          }}
+        >
+          <Grid
+            container
+            direction="column"
+            justify="center"
+            className={classes.BuildProducts}
+          >
+            <Grid item direction="column">
+              <Typography
+                variant="body2"
+                className={classes.Headings}
+                style={{ paddingTop: "50px", fontWeight: "bold" }}
+              >
+                Careers
+              </Typography>
+            </Grid>
+            <Grid
+              container
+              item
+              justify="center"
+              style={{ paddingTop: "240px", paddingLeft: "50px" }}
+            >
+              <Grid item>
+                <Typography
+                  className={classes.Headings}
+                  style={{
+                    fontWeight: "bold",
+                    width: "720px",
+                    marginBottom: "40px",
+                  }}
+                >
+                  We’re looking for people who want to make a difference.
+                </Typography>
+                <Button
+                  variant="contained"
+                  className={classes.subHeadings}
+                  style={{
+                    background: "#6C63FF",
+                    color: "white",
+                    fontWeight: "bold",
+                    borderRadius: "30px",
+                    paddingLeft: "64px",
+                    paddingRight: "64px",
+                  }}
+                >
+                  View Opportunities
+                </Button>
+              </Grid>
+              <Grid item>
+                <img src={Careers} />
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </section>
+      <section title="contacts" id="contacts">
+        <Grid
+          container
+          direction="column"
+          style={{ paddingBottom: "170px", paddingTop: "100px" }}
+          className={classes.BuildProducts}
+        >
+          <Grid item direction="column">
+            <Typography variant="body1" className={classes.subHeadings}>
+              Have something interesting to say!
+            </Typography>
+            <Typography
+              variant="body2"
+              className={classes.Headings}
+              style={{ paddingTop: "20px", fontWeight: "bold" }}
+            >
+              Contact Us
+            </Typography>
+          </Grid>
+
+          <Grid container item justify="center" direction="row">
+            <Grid item md={4}>
               <Typography
                 className={classes.Headings}
                 style={{
-                  fontWeight: "bold",
-                  width: "720px",
-                  marginBottom: "40px",
-                }}
-              >
-                We’re looking for people who want to make a difference.
-              </Typography>
-              <Button
-                variant="contained"
-                className={classes.subHeadings}
-                style={{
-                  background: "#6C63FF",
-                  color: "white",
-                  fontWeight: "bold",
+                  marginTop: "30px",
+                  width: "440px",
+                  height: "110px",
+                  background: "#A3A3A3",
                   borderRadius: "30px",
-                  paddingLeft: "64px",
-                  paddingRight: "64px",
                 }}
               >
-                View Opportunities
-              </Button>
+                <Grid item style={{ padding: "15px 92px 0px 92px" }}>
+                  <FontAwesomeIcon
+                    icon={faInstagram}
+                    className={classes.socialmediaIcons}
+                  />
+                  <FontAwesomeIcon
+                    icon={faFacebook}
+                    className={classes.socialmediaIcons}
+                    style={{ paddingLeft: "52px", paddingRight: "56px" }}
+                  />
+                  <FontAwesomeIcon
+                    icon={faTwitter}
+                    className={classes.socialmediaIcons}
+                  />
+                </Grid>
+              </Typography>
+              <Typography
+                style={{
+                  fontSize: "100px",
+                  fontWeight: "bold",
+                  width: "347px",
+                  fontFamily: "Karla",
+                }}
+              >
+                News & Blogs
+              </Typography>
             </Grid>
-            <Grid item>
-              <img src={Careers} />
+            <Grid item md={4}>
+              <img src={Future} style={{ marginBottom: "10px" }} />
+              <Typography
+                variant="body1"
+                style={{ fontWeight: "bold", fontFamily: "Karla" }}
+              >
+                Resume Builder: The Future of Job Hunting
+              </Typography>
+              <Grid
+                container
+                item
+                className={classes.subHeadings}
+                style={{ color: "#5F90FF" }}
+              >
+                <Grid item>
+                  <Typography variant="body2">Learn More</Typography>
+                </Grid>
+                <img
+                  src={externalIcon}
+                  style={{ width: "27px", height: "27px", paddingLeft: "24px" }}
+                />
+              </Grid>
+            </Grid>
+            <Grid item md={4}>
+              <Typography
+                variant="body1"
+                style={{ fontWeight: "bold", fontFamily: "Karla" }}
+              >
+                Job Matching: Finding the Career that's Right for You
+              </Typography>
+              <Grid
+                container
+                item
+                className={classes.subHeadings}
+                style={{ color: "#5F90FF" }}
+              >
+                <Grid item>
+                  <Typography variant="body2">Learn More</Typography>
+                </Grid>
+                <img
+                  src={externalIcon}
+                  style={{ width: "27px", height: "27px", paddingLeft: "24px" }}
+                />
+              </Grid>
+              <img src={JobMatching} />
             </Grid>
           </Grid>
         </Grid>
-      </Grid>
-
-      <Grid
-        container
-        direction="column"
-        style={{ paddingBottom: "170px", paddingTop: "100px" }}
-        className={classes.BuildProducts}
-      >
-        <Grid item direction="column">
-          <Typography variant="body1" className={classes.subHeadings}>
-            Have something interesting to say!
-          </Typography>
-          <Typography
-            variant="body2"
-            className={classes.Headings}
-            style={{ paddingTop: "20px", fontWeight: "bold" }}
-          >
-            Contact Us
-          </Typography>
-        </Grid>
-
-        <Grid container item justify="center" direction="row">
-          <Grid item md={4}>
-            <Typography
-              className={classes.Headings}
-              style={{
-                marginTop: "30px",
-                width: "440px",
-                height: "110px",
-                background: "#A3A3A3",
-                borderRadius: "30px",
-              }}
-            >
-              <Grid item style={{ padding: "15px 92px 0px 92px" }}>
-                <FontAwesomeIcon
-                  icon={faInstagram}
-                  className={classes.socialmediaIcons}
-                />
-                <FontAwesomeIcon
-                  icon={faFacebook}
-                  className={classes.socialmediaIcons}
-                  style={{ paddingLeft: "52px", paddingRight: "56px" }}
-                />
-                <FontAwesomeIcon
-                  icon={faTwitter}
-                  className={classes.socialmediaIcons}
-                />
-              </Grid>
-            </Typography>
-            <Typography
-              style={{
-                fontSize: "100px",
-                fontWeight: "bold",
-                width: "347px",
-                fontFamily: "Karla",
-              }}
-            >
-              News & Blogs
-            </Typography>
-          </Grid>
-          <Grid item md={4}>
-            <img
-              src={Future}
-              style={{ marginBottom:"10px" }}
-            />
-            <Typography
-              variant="body1"
-              style={{ fontWeight: "bold", fontFamily: "Karla",  }}
-            >
-              Resume Builder: The Future of Job Hunting
-            </Typography>
-            <Grid
-              container
-              item
-              className={classes.subHeadings}
-              style={{ color: "#5F90FF" }}
-            >
-              <Grid item>
-                <Typography variant="body2">Learn More</Typography>
-              </Grid>
-              <img
-                src={externalIcon}
-                style={{ width: "27px", height: "27px", paddingLeft: "24px" }}
-              />
-            </Grid>
-          </Grid>
-          <Grid item md={4}>
-            <Typography
-              variant="body1"
-              style={{ fontWeight: "bold", fontFamily: "Karla" }}
-            >
-              Job Matching: Finding the Career that's Right for You
-            </Typography>
-            <Grid
-              container
-              item
-              className={classes.subHeadings}
-              style={{ color: "#5F90FF" }}
-            >
-              <Grid item>
-                <Typography variant="body2">Learn More</Typography>
-              </Grid>
-              <img
-                src={externalIcon}
-                style={{ width: "27px", height: "27px", paddingLeft: "24px" }}
-              />
-            </Grid>
-            <img src={JobMatching} />
-          </Grid>
-        </Grid>
-      </Grid>
-      
+      </section>
     </Container>
   );
 };
