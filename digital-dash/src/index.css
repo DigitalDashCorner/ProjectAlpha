@@ -13,12 +13,13 @@ code {
     monospace;
 }
 
-html {
-  font-size: 20px;
-}
-
 @media (min-width: 1200px) {
   html {
     font-size: 24px;
   }
 }
+
+@media (min-width: 400px) {
+  html {
+    font-size: 16px;
+  }}

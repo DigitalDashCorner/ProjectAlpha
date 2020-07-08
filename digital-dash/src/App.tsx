@@ -42,9 +42,7 @@ const useStyles = makeStyles({
     display: "flex",
     alignItems: "center",
   },
-  body: {
-    height: "1080px",
-  },
+
 });
 
 function App() {
@@ -58,7 +56,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <Grid container direction="row" className={classes.body}>
+        <Grid container direction="row">
           <Grid container md={6} className={classes.navBar}>
             <img className={classes.logo} src={logo} style={{paddingLeft:"50px"}} />
             <Typography align="left" className={classes.topHeadingText}>
@@ -118,7 +116,7 @@ function App() {
                 </Link>
               </Tabs>
             </Grid>
-            <Grid md={12} className={classes.body}>
+            <Grid md={12}>
               <Switch>
                 <Route exact path="/">
                   <Redirect to="/home" />
