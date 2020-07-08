@@ -1,6 +1,7 @@
+@import url(https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap);
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Karla',-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -12,12 +13,13 @@ code {
     monospace;
 }
 
-html {
-  font-size: 16px;
-}
-
 @media (min-width: 1200px) {
   html {
     font-size: 24px;
   }
 }
+
+@media (min-width: 400px) {
+  html {
+    font-size: 16px;
+  }}

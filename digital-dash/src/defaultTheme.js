@@ -6,15 +6,21 @@ export default {
         fontWeightRegular: 400,
         fontWeightMedium: 500,
         fontWeightBold: 700,
-
+        fontFamily: "'Karla','Roboto', 'Helvetica', 'Arial', sans-serif", 
         h1: {
-            fontSize: '1.5rem',
+            fontSize: '3rem',
         },
         h2: {
-            fontSize: '1.125rem',
+            fontSize: '2.5rem',
         },
         h3: {
-            fontSize: '1rem'
+            fontSize: '2rem'
+        },
+        h4: {
+            fontSize:'1.5rem',
+        },
+        h5: {
+            fontSize:'1rem',
         },
         body1: {
             fontSize: '1rem',
